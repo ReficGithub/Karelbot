@@ -13,6 +13,9 @@ from tensorflow.keras.optimizers import Adam
 import subprocess
 import h5py
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
+import time
+
+begintijd = time.time()
 
 custom_optimizer = Adam(learning_rate=0.0005)
 batch_size = 40
@@ -74,3 +77,8 @@ def training(model, Xtrain, ytrain):
 
 get_training()
 model = load_model("model.keras")
+
+eindtijd = time.time()
+
+tijd = (eindtijd - begintijd) / 60
+print(f"It took {tijd} minutes.")
