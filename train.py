@@ -69,7 +69,6 @@ def laden_of_maken(input_shape):
 	return model
 
 def training(model, Xtrain, ytrain):
-	print(Xtrain.shape, ": ", ytrain.shape)
 	model.compile(loss='mean_absolute_percentage_error', optimizer=custom_optimizer)
 	model.fit(Xtrain, ytrain, epochs=epochs, batch_size=batch_size)
 
