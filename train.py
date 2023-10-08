@@ -24,7 +24,6 @@ bestandsnaam = 'training_data.h5'
 bestandsnaam2 = 'val_data.h5'
 
 Xpadnaam = os.path.join(*mappen, bestandsnaam)
-ypadnaam = os.path.join(*mappen, bestandsnaam2)
 
 with h5py.File(Xpadnaam, "r") as file:
     # Haal de datasets uit het bestand en laad ze in variabelen
@@ -33,11 +32,6 @@ with h5py.File(Xpadnaam, "r") as file:
 
 input_shape = (Xtrain.shape[1], Xtrain.shape[2])
 output_shape = (5, 4)
-
-with h5py.File("val_data.h5", "r") as file:
-    # Haal de datasets uit het bestand en laad ze in variabelen
-    Xval = file["Xval"][:]
-    yval = file["yval"][:]
 
 def get_training(input_shape=input_shape):
 	model = laden_of_maken(input_shape)
