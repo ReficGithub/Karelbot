@@ -51,13 +51,13 @@ def get_training(input_shape=input_shape):
 
 def bouw_lstm_netwerk(input_shape, output_shape):
     model = Sequential()
-    model.add(LSTM(2000, dropout=0.001, return_sequences=True, input_shape=input_shape))
-    model.add(LSTM(1500, dropout=0.001, return_sequences=True))
-    model.add(LSTM(1500, dropout=0.001, return_sequences=True))
-    model.add(LSTM(1500, dropout=0.001, return_sequences=True))
-    model.add(LSTM(1500, dropout=0.001, return_sequences=True))
-    model.add(LSTM(750, dropout=0.001, return_sequences=True))
-    model.add(tf.keras.layers.Dense(20))
+    model.add(LSTM(2000, activation='relu', dropout=0.001, return_sequences=True, input_shape=input_shape))
+    model.add(LSTM(1500, activation='relu', dropout=0.001, return_sequences=True))
+    model.add(LSTM(1500, activation='relu', dropout=0.001, return_sequences=True))
+    model.add(LSTM(1500, activation='relu', dropout=0.001, return_sequences=True))
+    model.add(LSTM(1500, activation='relu', dropout=0.001, return_sequences=True))
+    model.add(LSTM(750, activation='relu', dropout=0.001, return_sequences=True))
+    model.add(tf.keras.layers.Dense(20, activation='relu'))
     return model
 
 def sla_model_op(model, model_naam):
