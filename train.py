@@ -16,7 +16,7 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 
 custom_optimizer = Adam(learning_rate=0.0005)
 batch_size = 40
-epochs = 15
+epochs = 35
 aantal_candlesticks = 40
 
 mappen = ['trainingfolder', 'AAPL']
